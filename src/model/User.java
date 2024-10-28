@@ -29,7 +29,12 @@ public class User {
         this.name = name;
     }
 
-    public String getEmail() {
+    @Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", email=" + email + "]";
+	}
+
+	public String getEmail() {
         return email;
     }
 
@@ -37,23 +42,5 @@ public class User {
         this.email = email;
     }
 
-    // Overridden toString method for displaying user details
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                '}';
-    }
-
-    // Main method for testing
-    public static void main(String[] args)
-    {
-    	User user=new User(1,"pooja","ps3777903@gmail.com");
-    	System.out.println(user);
-    	user.setName("pooja");
-    	user.setEmail("ps3777903@gmail.com");
-    	System.out.println(user);
-    }
+   
 }
