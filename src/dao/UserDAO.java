@@ -9,13 +9,16 @@ import java.util.List;
 public class UserDAO {
     public void createUser(String name, String email) {
         String sql = "INSERT INTO User (name, email) VALUES (?, ?)";
+        
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, name);
             statement.setString(2, email);
             statement.executeUpdate();
-        } catch (SQLException e) {
+        } catch (SQLException e) 
+        {
             e.printStackTrace();
+            
         }
     }
 
